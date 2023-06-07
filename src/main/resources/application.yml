@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: ${POSTGRESQL_URL}
-    username: ${POSTGRESQL_USERNAME}
-    password: ${POSTGRESQL_PASSWORD}
+    url: jdbc:postgresql://${POSTGRES_ENDPOINT}:5432/postgres
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
