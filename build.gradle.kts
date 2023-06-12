@@ -22,7 +22,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // jsoup HTML parser library @ https://jsoup.org/
-    implementation ("org.jsoup:jsoup:1.16.1")
+    implementation("org.jsoup:jsoup:1.16.1")
 }
 
 tasks.withType<KotlinCompile> {
