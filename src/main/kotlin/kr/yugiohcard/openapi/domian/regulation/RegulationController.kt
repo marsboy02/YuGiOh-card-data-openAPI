@@ -10,32 +10,32 @@ class RegulationController(
     val regulationService: RegulationService,
 ) {
     @GetMapping
-    fun getRegulationAll(): Any {
+    fun getRegulationAll(): HashMap<String, ArrayList<String>> {
         return regulationService.getRegulationAll()
     }
 
     @GetMapping("/updated")
-    fun getUpdated(): Any {
+    fun getUpdated(): ArrayList<String> {
         return regulationService.getUpdatedCardNames()
     }
 
     @GetMapping("/forbidden")
-    fun getForbidden(): Any {
+    fun getForbidden(): ArrayList<String> {
         return regulationService.getForbiddenCardNames()
     }
 
     @GetMapping("/limited")
-    fun getLimited(): Any {
+    fun getLimited(): ArrayList<String> {
         return regulationService.getLimitedCardNames()
     }
 
     @GetMapping("/semi")
-    fun getSemiLimited(): Any {
+    fun getSemiLimited(): ArrayList<String> {
         return regulationService.getSemiCardNames()
     }
 
     @GetMapping("/released")
-    fun getReleased(): Any {
+    fun getReleased(): ArrayList<String> {
         return regulationService.getReleasedCardNames()
     }
 

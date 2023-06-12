@@ -8,7 +8,7 @@ class RegulationService {
     final val url = "https://www.db.yugioh-card.com/yugiohdb/forbidden_limited.action"
     val doc = Jsoup.connect(url).header("Accept-Language", "ko").get()
 
-    fun getRegulationAll(): Any {
+    fun getRegulationAll(): HashMap<String, ArrayList<String>> {
         val allRegulation = HashMap<String, ArrayList<String>>()
         allRegulation.put("update", crawlingByCss("update"))
         allRegulation.put("forbidden", crawlingByCss("forbidden"))
@@ -17,22 +17,22 @@ class RegulationService {
         allRegulation.put("releaseOfRestricted", crawlingByCss("release_of_restricted"))
         return allRegulation
     }
-    fun getUpdatedCardNames(): Any {
+    fun getUpdatedCardNames(): ArrayList<String> {
         return crawlingByCss("update")
     }
-    fun getForbiddenCardNames(): Any {
+    fun getForbiddenCardNames(): ArrayList<String> {
         return crawlingByCss("forbidden")
     }
 
-    fun getLimitedCardNames(): Any {
+    fun getLimitedCardNames(): ArrayList<String> {
         return crawlingByCss("limited")
     }
 
-    fun getSemiCardNames(): Any {
+    fun getSemiCardNames(): ArrayList<String> {
         return crawlingByCss("semi_limited")
     }
 
-    fun getReleasedCardNames(): Any {
+    fun getReleasedCardNames(): ArrayList<String> {
         return crawlingByCss("release_of_restricted")
     }
 
