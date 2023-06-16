@@ -38,5 +38,4 @@ class RegulationController(
     fun getReleased(): ArrayList<String> {
         return regulationService.getReleasedCardNames()
     }
-
 }
