@@ -5,16 +5,16 @@ import org.springframework.stereotype.Service
 
 @Service
 class RegulationService {
-    final val url = "https://www.db.yugioh-card.com/yugiohdb/forbidden_limited.action"
+    private final val url = "https://www.db.yugioh-card.com/yugiohdb/forbidden_limited.action"
     val doc = Jsoup.connect(url).header("Accept-Language", "ko").get()
 
     fun getRegulationAll(): HashMap<String, ArrayList<String>> {
         val allRegulation = HashMap<String, ArrayList<String>>()
-        allRegulation.put("update", crawlingByCss("update"))
-        allRegulation.put("forbidden", crawlingByCss("forbidden"))
-        allRegulation.put("limited", crawlingByCss("limited"))
-        allRegulation.put("semiLimited", crawlingByCss("semi_limited"))
-        allRegulation.put("releaseOfRestricted", crawlingByCss("release_of_restricted"))
+        allRegulation["update"] = crawlingByCss("update")
+        allRegulation["forbidden"] = crawlingByCss("forbidden")
+        allRegulation["limited"] = crawlingByCss("limited")
+        allRegulation["semiLimited"] = crawlingByCss("semi_limited")
+        allRegulation["releaseOfRestricted"] = crawlingByCss("release_of_restricted")
         return allRegulation
     }
     fun getUpdatedCardNames(): ArrayList<String> {
