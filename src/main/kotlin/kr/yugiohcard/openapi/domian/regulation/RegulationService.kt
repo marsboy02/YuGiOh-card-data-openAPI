@@ -17,31 +17,15 @@ class RegulationService {
         allRegulation["releaseOfRestricted"] = crawlingByCss("release_of_restricted")
         return allRegulation
     }
-    fun getUpdatedCardNames(): ArrayList<String> {
-        return crawlingByCss("update")
-    }
-    fun getForbiddenCardNames(): ArrayList<String> {
-        return crawlingByCss("forbidden")
-    }
 
-    fun getLimitedCardNames(): ArrayList<String> {
-        return crawlingByCss("limited")
-    }
-
-    fun getSemiCardNames(): ArrayList<String> {
-        return crawlingByCss("semi_limited")
-    }
-
-    fun getReleasedCardNames(): ArrayList<String> {
-        return crawlingByCss("release_of_restricted")
+    fun getRegulation(type: String): ArrayList<String> {
+        return crawlingByCss(type)
     }
 
     private fun crawlingByCss(id: String): ArrayList<String> {
         val elements = doc.select("#list_$id > div.list > div > div")
         val allCardName = arrayListOf<String>()
-        for (element in elements) {
-            allCardName.add(element.text())
-        }
+        for (element in elements) allCardName.add(element.text())
         return allCardName
     }
 }
