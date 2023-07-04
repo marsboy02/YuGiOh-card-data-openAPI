@@ -8,7 +8,7 @@ HTTP GET 요청을 통해 [유희왕 데이터베이스](https://www.db.yugioh-c
 
 ## 카드 정보 확인
 
-`https://yugiohcard.kr/card/{카드명}`
+`https://api.yugiohcard.kr/card/{카드명}`
 
 한글로 검색한 유희왕 카드의 정보를 반환합니다. 
 
@@ -28,16 +28,16 @@ HTTP GET 요청을 통해 [유희왕 데이터베이스](https://www.db.yugioh-c
 
 ## 리미트 레귤레이션 정보 확인
 
-`https://yugiohcard.kr/regulation/{타입}`
+`https://api.yugiohcard.kr/regulation?type={타입명}`
 
 유희왕 OCG 제한 카드 리스트를 반환합니다. 타입이 없는 경우 모든 리스트를 반환합니다.
 
-|    타입명    | 설명                   |
-|:---------:|----------------------|
-| forbidden | 금지 카드 리스트를 반환합니다.    |
-|  limited  | 제한 카드 리스트를 반환합니다.    |
-|   semi    | 준제한 카드 리스트를 반환합니다.   |
-|  updated  | 제한 규정이 바뀐 카드를 반환합니다. | 
+|     타입명      | 설명                   |
+|:------------:|----------------------|
+|  forbidden   | 금지 카드 리스트를 반환합니다.    |
+|   limited    | 제한 카드 리스트를 반환합니다.    |
+| semi_limited | 준제한 카드 리스트를 반환합니다.   |
+|   updated    | 제한 규정이 바뀐 카드를 반환합니다. | 
 
 ### 응답
 
