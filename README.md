@@ -6,6 +6,20 @@ HTTP GET 요청을 통해 [유희왕 데이터베이스](https://www.db.yugioh-c
 에서 다양한 유희왕 정보를 JSON으로 응답받아 사용할 수 있습니다. 
 모든 정보는 한국어로 제공됩니다.
 
+## 환경설정
+
+```bash
+# 설치
+$ git clone https://github.com/marsboy02/yugioh-card-data-api
+$ cd yugioh-card-data-api
+
+# 빌드
+$ ./gradlew build testClasses -x test
+
+# 실행
+$ java -jar build/libs/openapi-0.0.1-SNAPSHOT.jar
+```
+
 ## 카드 정보 확인
 
 `https://api.yugiohcard.kr/card/{카드명}`
