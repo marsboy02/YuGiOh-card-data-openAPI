@@ -1,11 +1,13 @@
 FROM openjdk:17
 
-WORKDIR /app
+ENV APP_HOME=/apps
 
-COPY . /app
+ARG JAR_FILE_PATH=build/libs/openapi-0.0.1-SNAPSHOT.jar
 
-RUN ./gradle build
+WORKDIR $APP_HOME
 
-CMD ["java", "-jar", "/app/build/libs/openapi-0.0.1-SNAPSHOT.jar"]
+COPY $JAR_FILE_PATH app.jar
 
 EXPOSE 8080
+
+CMD ["java", "-jar", "app.jar"]
