@@ -1,12 +1,8 @@
 FROM openjdk:17
 
-ENV APP_HOME=/apps
+WORKDIR /apps
 
-ARG JAR_FILE_PATH=build/libs/*.jar
-
-WORKDIR $APP_HOME
-
-COPY $JAR_FILE_PATH app.jar
+COPY build/libs/*.jar app.jar
 
 EXPOSE 8080
 
