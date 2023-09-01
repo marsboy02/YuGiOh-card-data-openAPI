@@ -2,7 +2,7 @@ FROM openjdk:17
 
 ENV APP_HOME=/apps
 
-ARG JAR_FILE_PATH=build/libs/openapi-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE_PATH=build/libs/*.jar
 
 WORKDIR $APP_HOME
 
