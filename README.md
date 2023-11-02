@@ -1,32 +1,36 @@
 # YuGiOh-card-data-api
 
-> 유희왕 카드 게임에 대한 정보를 제공하는 API입니다.
+유희왕 카드 게임에 대한 정보를 제공하는 API입니다.
 
 HTTP GET 요청을 통해 [유희왕 데이터베이스](https://www.db.yugioh-card.com/yugiohdb/?request_locale=ko)
-에서 다양한 유희왕 정보를 JSON으로 응답받아 사용할 수 있습니다. 
+에서 다양한 유희왕 정보를 JSON으로 응답받아 사용할 수 있습니다.
 모든 정보는 한국어로 제공됩니다.
 
-- **SWAGGER UI** : api.yugiohcard.kr/docs
+- **SWAGGER UI** : (api.yugiohcard.kr/docs)[https://api.yugiohcard.kr/docs]
 
-## 환경설정
+## Environment
 
 ```bash
-# 설치
 $ git clone https://github.com/marsboy02/yugioh-card-data-api
+```
+
+```bash
 $ cd yugioh-card-data-api
+```
 
-# 빌드
+```bash
 $ ./gradlew build testClasses -x test
+```
 
-# 실행
-$ java -jar build/libs/openapi-0.0.1-SNAPSHOT.jar
+```bash
+$ java -jar build/libs/*.jar
 ```
 
 ## 카드 정보 확인
 
 `https://api.yugiohcard.kr/card/{카드명}`
 
-한글로 검색한 유희왕 카드의 정보를 반환합니다. 
+한글로 검색한 유희왕 카드의 정보를 반환합니다.
 
 ### 응답
 
@@ -48,15 +52,15 @@ $ java -jar build/libs/openapi-0.0.1-SNAPSHOT.jar
 
 유희왕 OCG 제한 카드 리스트를 반환합니다. 타입이 없는 경우 모든 리스트를 반환합니다.
 
-|          타입명          | 설명                   |
-|:---------------------:|----------------------|
-|       forbidden       | 금지 카드 리스트를 반환합니다.    |
-|        limited        | 제한 카드 리스트를 반환합니다.    |
-|     semi_limited      | 준제한 카드 리스트를 반환합니다.   |
+|        타입명         | 설명                                |
+| :-------------------: | ----------------------------------- |
+|       forbidden       | 금지 카드 리스트를 반환합니다.      |
+|        limited        | 제한 카드 리스트를 반환합니다.      |
+|     semi_limited      | 준제한 카드 리스트를 반환합니다.    |
 |        update         | 제한 규정이 바뀐 카드를 반환합니다. |
 | release_of_restricted | 제한 규정이 바뀐 카드를 반환합니다. |
 
-### 응답
+### 응답 예시
 
 ```JSON
 [
@@ -72,3 +76,6 @@ $ java -jar build/libs/openapi-0.0.1-SNAPSHOT.jar
 ]
 ```
 
+## License
+
+- [MIT License](https://opensource.org/license/mit/)
