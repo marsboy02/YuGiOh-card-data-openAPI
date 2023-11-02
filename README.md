@@ -26,7 +26,7 @@ $ ./gradlew build testClasses -x test
 $ java -jar build/libs/*.jar
 ```
 
-## 카드 정보 확인
+## API docs
 
 `https://api.yugiohcard.kr/card/{카드명}`
 
