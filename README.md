@@ -28,11 +28,13 @@ $ java -jar build/libs/*.jar
 
 ## API docs
 
+### 카드 조회
+
 `https://api.yugiohcard.kr/card/{카드명}`
 
 한글로 검색한 유희왕 카드의 정보를 반환합니다.
 
-### 응답
+**응답 예시**
 
 ```JSON
 {
@@ -46,7 +48,7 @@ $ java -jar build/libs/*.jar
 }
 ```
 
-## 리미트 레귤레이션 정보 확인
+### 리미트 레귤레이션 정보 확인
 
 `https://api.yugiohcard.kr/regulation/{타입명}`
 
@@ -60,7 +62,7 @@ $ java -jar build/libs/*.jar
 |        update         | 제한 규정이 바뀐 카드를 반환합니다. |
 | release_of_restricted | 제한 규정이 바뀐 카드를 반환합니다. |
 
-### 응답 예시
+**응답 예시**
 
 ```JSON
 [
