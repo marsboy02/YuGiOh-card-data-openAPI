@@ -1,6 +1,7 @@
 package kr.yugiohcard.openapi.domian.util
 
 import io.swagger.v3.oas.annotations.Operation
+import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -13,6 +14,10 @@ import java.time.LocalDate
 class HealthController {
     @GetMapping
     @Operation(summary = "서비스의 상태를 체크합니다.", description = "LocalDate를 반환합니다.")
+    @ApiResponse(
+        responseCode = "200",
+        description = "컨테이너 환경에서 HealthCheck에 사용되는 기본 Url입니다."
+    )
     fun getHealth(): String {
         val onlyDate: String = LocalDate.now().toString()
         return "Current date : $onlyDate"

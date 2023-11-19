@@ -1,6 +1,7 @@
 package kr.yugiohcard.openapi.domian.regulation
 
 import io.swagger.v3.oas.annotations.Operation
+import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.tags.Tag
 import kr.yugiohcard.openapi.domian.regulation.dto.GetAllRegulationResponse
 import kr.yugiohcard.openapi.domian.regulation.dto.GetRegulationResponse
@@ -17,12 +18,20 @@ class RegulationController(
 ) {
     @GetMapping
     @Operation(summary = "리미트 레귤레이션의 모든 정보 확인", description = "OCG 리미트 레귤레이션의 모든 정보를 반환합니다.")
+    @ApiResponse(
+        responseCode = "200",
+        description = "모든 OCG 금제 리스트 조회에 성공한 경우"
+    )
     fun getRegulationAll(): GetAllRegulationResponse {
         return regulationService.getRegulationAll()
     }
 
     @GetMapping("/{type}")
     @Operation(summary = "리미트 레귤레이션의 정보 확인", description = "path에 해당하는 리미트 레귤레이션 정보를 반환합니다.")
+    @ApiResponse(
+        responseCode = "200",
+        description = "path 변수에 따른 금제 리스트 조회에 성공한 경우"
+    )
     fun getRegulation(@PathVariable type: String): GetRegulationResponse {
         return regulationService.getRegulation(type)
     }

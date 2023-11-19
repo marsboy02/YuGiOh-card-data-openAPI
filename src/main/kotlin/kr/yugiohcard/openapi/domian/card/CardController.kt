@@ -17,6 +17,10 @@ class CardController(
 ) {
     @GetMapping("{name}")
     @Operation(summary = "카드의 정보를 반환합니다.", description = "카드의 정보를 반환합니다.")
+    @ApiResponse(
+        responseCode = "200",
+        description = "카드 정보 조회에 성공한 경우"
+    )
     fun getCardData(@PathVariable name: String): GetCardResponse {
         return cardService.getCardData(name)
     }
