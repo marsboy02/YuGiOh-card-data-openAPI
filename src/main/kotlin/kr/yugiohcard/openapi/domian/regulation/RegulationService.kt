@@ -1,5 +1,7 @@
 package kr.yugiohcard.openapi.domian.regulation
 
+import kr.yugiohcard.openapi.domian.regulation.dto.GetAllRegulationResponse
+import kr.yugiohcard.openapi.domian.regulation.dto.GetRegulationResponse
 import org.jsoup.Jsoup
 import org.springframework.stereotype.Service
 
@@ -8,18 +10,18 @@ class RegulationService {
     private final val url = "https://www.db.yugioh-card.com/yugiohdb/forbidden_limited.action"
     val doc = Jsoup.connect(url).header("Accept-Language", "ko").get()
 
-    fun getRegulationAll(): HashMap<String, ArrayList<String>> {
+    fun getRegulationAll(): GetAllRegulationResponse {
         val allRegulation = HashMap<String, ArrayList<String>>()
-        allRegulation["update"] = crawlingByCss("update")
-        allRegulation["forbidden"] = crawlingByCss("forbidden")
-        allRegulation["limited"] = crawlingByCss("limited")
-        allRegulation["semiLimited"] = crawlingByCss("semi_limited")
-        allRegulation["releaseOfRestricted"] = crawlingByCss("release_of_restricted")
-        return allRegulation
+        val update = crawlingByCss("update")
+        val forbidden = crawlingByCss("forbidden")
+        val limited = crawlingByCss("limited")
+        val semiLimited= crawlingByCss("semi_limited")
+        val releaseOfRestricted = crawlingByCss("release_of_restricted")
+        return GetAllRegulationResponse(update, forbidden, limited, semiLimited, releaseOfRestricted)
     }
 
-    fun getRegulation(type: String): ArrayList<String> {
-        return crawlingByCss(type)
+    fun getRegulation(type: String): GetRegulationResponse {
+        return GetRegulationResponse(crawlingByCss(type))
     }
 
     private fun crawlingByCss(id: String): ArrayList<String> {
