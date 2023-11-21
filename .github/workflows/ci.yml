@@ -22,7 +22,7 @@ jobs:
           arguments: build
 
   continuous-delivery:
-    needs: continuous-integration
+    needs: continuous-intergration
     runs-on: ubuntu-latest
     steps:
       - name: Checkout out the repo
