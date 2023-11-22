@@ -11,7 +11,6 @@ class RegulationService {
     val doc = Jsoup.connect(url).header("Accept-Language", "ko").get()
 
     fun getRegulationAll(): GetAllRegulationResponse {
-        val allRegulation = HashMap<String, ArrayList<String>>()
         val update = crawlingByCss("update")
         val forbidden = crawlingByCss("forbidden")
         val limited = crawlingByCss("limited")
