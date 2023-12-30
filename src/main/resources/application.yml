@@ -1,3 +1,8 @@
 springdoc:
   swagger-ui:
     path: /docs
+
+spring:
+  http:
+    encoding:
+
