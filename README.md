@@ -6,7 +6,7 @@ HTTP GET 요청을 통해 [유희왕 데이터베이스](https://www.db.yugioh-c
 에서 다양한 유희왕 정보를 JSON으로 응답받아 사용할 수 있습니다.
 모든 정보는 한국어로 제공됩니다.
 
-- **SWAGGER UI** : (api.yugiohcard.kr/docs)[https://api.yugiohcard.kr/docs]
+- **SWAGGER UI** : [api.yugiohcard.kr/docs](https://api.yugiohcard.kr/docs)
 
 ## Environment
 
